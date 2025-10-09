@@ -47,37 +47,30 @@ let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-  perguntaAtual = perguntas[atual];
-  caixaPerguntas.textContent = perguntaAtual.enunciado;
-  mostraAlternativas();
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    mostraAlternativas();
 }
 
 function mostraAlternativas() {
-  caixaAlternativas.innerHTML = ""; // Limpa as alternativas anteriores
-  for (const alternativa of perguntaAtual.alternativas) {
-    const botaoAlternativas = document.createElement("button");
-    botaoAlternativas.textContent = alternativa.texto;
-    botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-    caixaAlternativas.appendChild(botaoAlternativas);
-  }
+    for (const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa;
+        caixaAlternativas.appendChild(botaoAlternatives);
+    }
 }
 
-function respostaSelecionada(opcaoSelecionada) {
-  const afirmacoes = opcaoSelecionada.afirmacao; // Corrigido o erro de digitação
-  historiaFinal += afirmacoes + " "; // Adiciona a resposta à história
-  if (atual < perguntas.length - 1) {
-    atual++; // Avança para a próxima pergunta
+function respostaSelecionada(opcaoSelecionaada){
+    const afirmacoes = opcaoSelecionaada.afirmacoes;
+    histiaFinal = afirmacoes;
+    atual++;
     mostraPergunta();
-  } else {
-    mostrarResultado(); // Chama a função para mostrar o resultado quando todas as perguntas forem respondidas
-  }
 }
 
-function mostrarResultado() {
-  caixaPerguntas.textContent = "Resposta final 1)Falso, 2)Falso, 3)Verdadeiro, 4)Verdadeiro, 5)Falso"; // Pode modificar a mensagem conforme desejar
-  textoResultado.textContent = historiaFinal; // Exibe a história final
-  caixaAlternativas.innerHTML = ""; // Limpa as alternativas após a conclusão
-  caixaResultado.style.display = "block"; // Exibe o resultado
+function mostratResultado() {
+    caixaPerguntas.textContent = "em 2049....";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
 }
 
-mostraPergunta(); // Inicia o processo mostrando a primeira pergunta
+mostraPergunta();
