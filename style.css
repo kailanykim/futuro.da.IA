@@ -29,31 +29,16 @@ h1 {
     color: var(--cor-destaque);
 }
 
-.caixa-alternativas button {
+button {
     background-color: var(--cor-secundaria);
     color: var(--cor-texto);
     border: none;
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
     border-radius: 5px;
+    padding: 10px;
     transition: background-color 0.3s;
 }
 
-.caixa-alternativas button:hover {
+button:hover {
     background-color: var(--cor-destaque);
-}
-
-.caixa-resultado {
-    display: none;
-    background-color: var(--cor-principal);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.texto-resultado {
-    color: var(--cor-texto);
-    font-size: 18px;
+    color: var(--cor-destaque);
 }
