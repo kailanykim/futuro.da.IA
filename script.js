@@ -5,41 +5,41 @@ const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
-  {
-    enunciado: "IA vai roubar todos os empregos humanos no futuro?",
-    alternativas: [
-      { texto: "( ) Verdadeiro", afirmacao: "Verdadeiro" },
-      { texto: "( ) Falso", afirmacao: "Falso" }
+    {
+        enunciado: " IA vai roubar todos os empregos humanos no futuro? "
+        Alternativas; [
+            "Sim"
+            "Não"
+        ]
+    },
+    {
+    enunciado: " IA vai roubar todos os empregos humanos no futuro? "
+        Alternativas; [
+            "Sim"
+            "Não"
     ]
-  },
-  {
-    enunciado: "IAs podem tomar decisões muito mais rápidas que os humanos?",
-    alternativas: [
-      { texto: "( ) Verdadeiro", afirmacao: "Verdadeiro" },
-      { texto: "( ) Falso", afirmacao: "Falso" }
+},
+{
+    enunciado: " A IA é sempre 100% segura e impossível de hackear? "
+        Alternativas; [
+            "Sim"
+            "Não"
     ]
-  },
-  {
-    enunciado: "A IA é sempre 100% segura e impossível de hackear?",
-    alternativas: [
-      { texto: "( ) Verdadeiro", afirmacao: "Verdadeiro" },
-      { texto: "( ) Falso", afirmacao: "Falso" }
+},
+{
+    enunciado: " Jogos de videogame usam IA para tornar inimigos mais inteligentes? "
+        Alternativas; [
+            "Sim"
+            "Não"
     ]
-  },
-  {
-    enunciado: "Jogos de videogame usam IA para tornar inimigos mais inteligentes?",
-    alternativas: [
-      { texto: "( ) Verdadeiro", afirmacao: "Verdadeiro" },
-      { texto: "( ) Falso", afirmacao: "Falso" }
+},
+{
+    enunciado: " IA pode clonar vozes humanas com alta precisão? "
+        Alternativas; [
+            "Sim"
+            "Não"
     ]
-  },
-  {
-    enunciado: "IA pode clonar vozes humanas com alta precisão?",
-    alternativas: [
-      { texto: "( ) Verdadeiro", afirmacao: "Verdadeiro" },
-      { texto: "( ) Falso", afirmacao: "Falso" }
-    ]
-  }
+},
 ];
 
 let atual = 0;
