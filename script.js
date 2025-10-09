@@ -58,24 +58,38 @@ let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
 
-function mostraPergunta() { 
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    mostraAlternativa();
+function mostraPergunta() {
+  perguntaAtual = perguntas[atual];
+  caixaPerguntas.textContent = perguntaAtual.enunciado;
+  mostraAlternativas();
 }
 
-function mostraAlternativa(){ 
-    for (const alternativa of perguntaAtual.alternativas){ 
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
-        
-    }
+function mostraAlternativas() {
+  caixaAlternativas.innerHTML = ""; // Limpa as alternativas anteriores
+  for (const alternativa of perguntaAtual.alternativas) {
+    const botaoAlternativas = document.createElement("button");
+    botaoAlternativas.textContent = alternativa.texto;
+    botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+    caixaAlternativas.appendChild(botaoAlternativas);
+  }
 }
-function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacoes;
-    historiaFinal = afirmacoes;
-    atual ++
+
+function respostaSelecionada(opcaoSelecionada) {
+  const afirmacoes = opcaoSelecionada.afirmacao; // Corrigido o erro de digitação
+  historiaFinal += afirmacoes + " "; // Adiciona a resposta à história
+  if (atual < perguntas.length - 1) {
+    atual++; // Avança para a próxima pergunta
     mostraPergunta();
+  } else {
+    mostrarResultado(); // Chama a função para mostrar o resultado quando todas as perguntas forem respondidas
+  }
 }
+
+function mostrarResultado() {
+  caixaPerguntas.textContent = "Resposta final 1)Falso, 2)Falso, 3)Verdadeiro, 4)Verdadeiro, 5)Falso"; // Pode modificar a mensagem conforme desejar
+  textoResultado.textContent = historiaFinal; // Exibe a história final
+  caixaAlternativas.innerHTML = ""; // Limpa as alternativas após a conclusão
+  caixaResultado.style.display = "block"; // Exibe o resultado
+}
+
+mostraPergunta(); // Inicia o processo mostrando a primeira pergunta
