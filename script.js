@@ -50,7 +50,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaEnunciado.textContent = "Em 2049...";
+    caixaEnunciado.textContent = "“Você Decide o Futuro da IA” é um site de quiz interativo com 5 perguntas de Verdadeiro ou Falso sobre Inteligência Artificial. O objetivo é ensinar mitos e verdades, mostrando pontos positivos e negativos da IA de forma divertida e educativa.";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.innerHTML = "";
 }
