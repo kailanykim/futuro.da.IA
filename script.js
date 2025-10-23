@@ -5,20 +5,32 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "A IA vai roubar todos os empregos humanos no futuro?",
-        alternativas: ["Sim", "Não"]
+        enunciado: "A inteligência artificial consegue aprender com grandes quantidades de dados e melhorar seu desempenho com o tempo.",
+        alternativas: ["Verdadeiro", "Falso"]
     },
     {
-        enunciado: "A IA é sempre 100% segura e impossível de hackear?",
-        alternativas: ["Sim", "Não"]
+        enunciado: "A inteligência artificial pode pensar e sentir emoções exatamente como os seres humanos.",
+        alternativas: ["Verdadeiro", "Falso"]
     },
     {
-        enunciado: "Jogos de videogame usam IA para tornar inimigos mais inteligentes?",
-        alternativas: ["Sim", "Não"]
+        enunciado: "Sistemas de reconhecimento facial utilizam técnicas de inteligência artificial para identificar rostos.",
+        alternativas: ["Verdadeiro", "Falso"]
     },
     {
-        enunciado: "IA pode clonar vozes humanas com alta precisão?",
-        alternativas: ["Sim", "Não"]
+        enunciado: "Toda IA precisa de conexão com a internet para funcionar.",
+        alternativas: ["Verdadeiro", "Falso"]
+    },
+    {
+        enunciado: "A inteligência artificial é usada em recomendações de filmes e músicas em plataformas como Netflix e Spotify.",
+        alternativas: ["Verdadeiro", "Falso"]
+    },
+    {
+        enunciado: "A IA pode ser usada para criar textos, imagens e até músicas originais.",
+        alternativas: ["Verdadeiro", "Falso"]
+    },
+    {
+        enunciado: "A inteligência artificial sempre toma decisões corretas e imparciais, sem erro humano.",
+        alternativas: ["Verdadeiro", "Falso"]
     }
 ];
 
@@ -50,7 +62,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaEnunciado.textContent = "“Você Decide o Futuro da IA” é um site de quiz interativo com 5 perguntas de Verdadeiro ou Falso sobre Inteligência Artificial. O objetivo é ensinar mitos e verdades, mostrando pontos positivos e negativos da IA de forma divertida e educativa.";
+    caixaEnunciado.textContent = "Parabens você chegou ao final do quizz, obrigada por participar!!!";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.innerHTML = "";
 }
