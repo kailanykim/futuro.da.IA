@@ -1,76 +1,58 @@
-const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPerguntas = document.querySelector(".caixa-perguntas");
+const caixaEnunciado = document.querySelector(".caixa-enunciado");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: " IA vai roubar todos os empregos humanos no futuro? "
-        Alternativas; [
-            "Sim"
-            "Não"
-        ]
+        enunciado: "A IA vai roubar todos os empregos humanos no futuro?",
+        alternativas: ["Sim", "Não"]
     },
     {
-    enunciado: " IA vai roubar todos os empregos humanos no futuro? "
-        Alternativas; [
-            "Sim"
-            "Não"
-    ]
-},
-{
-    enunciado: " A IA é sempre 100% segura e impossível de hackear? "
-        Alternativas; [
-            "Sim"
-            "Não"
-    ]
-},
-{
-    enunciado: " Jogos de videogame usam IA para tornar inimigos mais inteligentes? "
-        Alternativas; [
-            "Sim"
-            "Não"
-    ]
-},
-{
-    enunciado: " IA pode clonar vozes humanas com alta precisão? "
-        Alternativas; [
-            "Sim"
-            "Não"
-    ]
-},
+        enunciado: "A IA é sempre 100% segura e impossível de hackear?",
+        alternativas: ["Sim", "Não"]
+    },
+    {
+        enunciado: "Jogos de videogame usam IA para tornar inimigos mais inteligentes?",
+        alternativas: ["Sim", "Não"]
+    },
+    {
+        enunciado: "IA pode clonar vozes humanas com alta precisão?",
+        alternativas: ["Sim", "Não"]
+    }
 ];
 
 let atual = 0;
-let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    mostraAlternativas();
-}
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
 
-function mostraAlternativas() {
+    const perguntaAtual = perguntas[atual];
+    caixaEnunciado.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.innerHTML = ""; // limpa alternativas anteriores
+
     for (const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa;
-        caixaAlternativas.appendChild(botaoAlternatives);
+        const botaoAlternativa = document.createElement("button");
+        botaoAlternativa.textContent = alternativa;
+        botaoAlternativa.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativa);
     }
 }
 
-function respostaSelecionada(opcaoSelecionaada){
-    const afirmacoes = opcaoSelecionaada.afirmacoes;
-    histiaFinal = afirmacoes;
+function respostaSelecionada(opcaoSelecionada) {
+    historiaFinal += `Você respondeu "${opcaoSelecionada}" para a pergunta ${atual + 1}. `;
     atual++;
     mostraPergunta();
 }
 
-function mostratResultado() {
-    caixaPerguntas.textContent = "em 2049....";
+function mostraResultado() {
+    caixaEnunciado.textContent = "Em 2049...";
     textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
+    caixaAlternativas.innerHTML = "";
 }
 
 mostraPergunta();

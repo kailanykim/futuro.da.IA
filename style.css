@@ -10,15 +10,29 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .caixa-principal {
     background-color: var(--cor-principal);
     width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.caixa-perguntas {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
@@ -31,14 +45,15 @@ h1 {
 
 button {
     background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
+    color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: var(--cor-destaque);
-    color: var(--cor-destaque);
 }
